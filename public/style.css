@@ -1,0 +1,43 @@
+/* Contenedor principal del fondo */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  /* Color de respaldo por si el GIF tarda en cargar */
+}
+
+/* Capa del GIF con opacidad y blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Se coloca detrás de todo */
+  
+  /* Configuración de la imagen */
+  background-image: url('background2.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Ajustes de visibilidad */
+  opacity: 0.4;        /* Ajusta este valor (0 a 1) para la transparencia */
+  filter: blur(4px);   /* Ajusta los píxeles para más o menos desenfoque */
+}
+
+/* Mejora de contraste para el contenido */
+.container {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente para legibilidad */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.table-dark {
+  opacity: 0.95;
+}
